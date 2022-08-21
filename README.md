@@ -34,8 +34,8 @@ Desktop design
 
 ### Links
 
-- Solution URL: [Fylo data storage component solution]()
-- Live Site URL: [GitHub Pages]()
+- Solution URL: [Fylo data storage component solution](https://www.frontendmentor.io/solutions/fylo-data-storage-component-solution-a5FOvI23mK)
+- Live Site URL: [GitHub Pages](https://jimaloko.github.io/Fylo-data-storage-component-solution/)
 
 ## My process
 
