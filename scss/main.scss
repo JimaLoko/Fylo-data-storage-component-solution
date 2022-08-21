@@ -1,0 +1,339 @@
+// reset 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0) scale(1);
+        background-color: #94ff97;
+    }
+    50% {
+        transform: rotate(180deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(360deg) scale(0.8);
+        background-color: #19FF19;
+    }
+}
+
+@keyframes charge {
+    0% {
+        width: 50%;
+    }
+    25% {
+        width: 63.7%;
+    }
+    50% {
+        width: 72%;
+    }
+    75% {
+        width: 81.5%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes space-left {
+    0% {
+        content: "500";
+    }
+    25% {
+        content: "363";
+    }
+    50% {
+        content: "280";
+    }
+    75% {
+        content: "185";
+    }
+    100% {
+        content: "0";
+    }
+}
+
+@keyframes space-used {
+    0% {
+        content: "500";
+    }
+    25% {
+        content: "637";
+    }
+    50% {
+        content: "720";
+    }
+    75% {
+        content: "815";
+    }
+    100% {
+        content: "1000";
+    }
+}
+
+@keyframes enter-left{
+    0%{
+        transform:translateX(-2rem);
+        opacity:0
+    }
+    100%{
+        transform:translateX(0);
+        opacity:1
+    }
+}
+@keyframes enter-top{
+    0%{
+        transform:translateY(-3rem);
+        opacity:0
+    }
+    100%{
+        transform:translateY(0);
+        opacity:1
+    }
+}
+@keyframes enter-bottom{
+    0%{
+        transform:translateY(3rem);
+        opacity:0
+    }
+    100%{
+        transform:translateY(0);
+        opacity:1
+    }
+}
+
+@mixin gradient-text {
+    background-image: linear-gradient(315deg, rgba(255,77,151,1) 0%, rgba(255,163,153,1) 100%);
+    background-clip: text;
+    color: transparent;
+    background-size: 300% auto;
+}
+
+// variables
+
+// ## Colors
+// $Gradient: hsl(6, 100%, 80%) to #ff4d97
+$Pale-Blue: hsl(243, 100%, 93%);
+$Grayish-Blue: hsl(229, 7%, 55%);
+$Dark-Blue: hsl(228, 56%, 26%);
+$Very-Dark-Blue: hsl(229, 57%, 11%);
+
+main {
+    font-size: 1.4rem;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $Very-Dark-Blue url(../images/bg-desktop.png) no-repeat bottom center;
+    background-size: contain;
+    flex-direction: column;
+        .container {
+            animation: enter-left 1.5s;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-top: 7rem;
+            .file-explorer {
+                animation: enter-top 2s;
+                box-shadow: rgba(255, 77, 151, 0.3) 0px 19px 38px, rgba(255, 77, 151, 0.22) 0px 15px 12px;
+                margin-right: 3.5rem;
+                width: 100%;
+                max-width: 40rem;
+                background-color: $Dark-Blue;
+                border-radius: 10px 130px 10px 10px;
+                padding: 5rem;
+                    .logo {
+                        margin-bottom: 4rem;
+                        filter: brightness(0) saturate(100%) invert(71%) sepia(69%) saturate(5747%) hue-rotate(305deg) brightness(97%) contrast(110%);
+                    }
+                    .icons {
+                        ul {
+                            list-style: none;
+                            display: flex;
+                                li {
+                                    display: flex;
+                                    align-items: center;
+                                    border-radius: 10px;
+                                    background-color: $Very-Dark-Blue;
+                                    transition: all .5s;
+                                    &:not(:first-child) {
+                                        margin-left: 2rem;
+                                    }
+                                    &:hover {
+                                        transform: scale(1.1);
+                                    }
+                                    a {
+                                        padding: 1.5rem;
+                                        transition: all .3s;
+                                    }
+                                    a:hover {
+                                        transform: rotate(30deg);
+                                        background-color: aqua;
+                                        background: transparent;
+                                        filter: brightness(0) saturate(100%) invert(71%) sepia(69%) saturate(5747%) hue-rotate(305deg) brightness(97%) contrast(110%);
+                                    }
+                                }
+                        }
+                    }
+    
+            }
+    
+            .storage-bar {
+                animation: enter-bottom 2s;
+                box-shadow: rgba(255, 77, 151, 0.3) 0px 19px 38px, rgba(255, 77, 151, 0.22) 0px 15px 12px;
+                border-radius: 10px;
+                width: 100%;
+                max-width: 60rem;
+                height: 17rem;
+                background-color: $Dark-Blue;
+                padding: 4rem;
+                position: relative;
+                .storage-space {
+                        position: absolute;
+                        box-shadow: rgba(255, 77, 151, 0.3) 0px 3px 6px, rgba(255, 77, 151, 0.22) 0px 3px 6px;
+                        box-shadow: rgba(255, 77, 151, 0.35) 0px 5px 15px;
+                        top: -5.3rem;
+                        right: 5.3rem;
+                        background-color: $Pale-Blue;
+                        border-radius: 10px 10px 0 10px;
+                        width: 100%;
+                        max-width: 18rem;
+                        line-height: 8rem;
+                        transition: all 1s;
+                            &::after {
+                                content: "";
+                                right: 0;
+                                bottom: -1.9rem;
+                                position: absolute;
+                                border-left: transparent 10px solid;
+                                border-top: $Pale-Blue 10px solid;
+                                border-right: $Pale-Blue 10px solid;
+                                border-bottom: transparent 10px solid;
+                            }
+                            h1 {
+                                &::before {
+                                    content: "500";
+                                    @include gradient-text;
+                                    animation: space-left 10s infinite ease-in-out;
+                                    animation-delay: 2s;
+                                }
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 4rem;
+                                span {
+                                    color: $Grayish-Blue;
+                                    text-transform: uppercase;
+                                    font-size: 1.4rem;
+                                    margin-left: 1.5rem;
+                                }
+                            }
+                            
+                    }
+                    h2 {
+                        color: $Grayish-Blue;
+                        font-weight: 400;
+                        font-size: 1.8rem;
+                        margin-bottom: 2rem;
+
+                        span {
+                            color: $Pale-Blue;
+                            font-weight: 700;
+                            &::before {
+                                content: "500";
+                               @include gradient-text;
+                                animation: space-used 10s infinite ease-in-out;
+                                animation-delay: 2s;
+                            }
+                        }
+                    }
+
+                    .bar {
+                        width: 100%;
+                        height: 2rem;
+                        background-color: $Very-Dark-Blue;
+                        border-radius: 10px;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+
+                            .charge-bar {
+                                position: relative;
+                                width: 50%;
+                                height: 1.8rem;
+                                background: linear-gradient(315deg, rgba(255,77,151,1) 0%, rgba(255,163,153,1) 100%);
+                                border-radius: 10px;
+                                animation: charge 10s infinite ease-in-out;
+                                animation-delay: 2s;
+                                &::after {
+                                    
+                                    content: "";
+                                    top: 0.1rem;
+                                    right: 0.2rem;
+                                    border-radius: 50%;
+                                    z-index: 3;
+                                    position: absolute;
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    background-color: white;
+                                    animation: rotate .15s infinite ease-in-out;
+                                    box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0);
+                                }
+                            }
+                    }
+                    .gbs {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: $Pale-Blue;
+                        font-weight: 700;
+                    }
+            }
+        }
+    
+    @media (max-width:1070px) {
+        background: $Very-Dark-Blue url(../images/bg-mobile.png) no-repeat top center;
+        background-size: cover;
+        padding: 2rem;
+        .container {
+            margin: 0;
+            margin-bottom: 4rem;
+            flex-direction: column;
+            align-items: center;
+                .file-explorer {
+                    margin: 0;
+                    margin-bottom: 2rem;
+                }
+                .storage-bar {
+                    height: auto;
+                    .storage-space {
+                        top: 17rem;
+                        right: 8rem;
+                        border-radius: 10px;
+                        &::after {
+                            content: "";
+                            border: none;
+                        }
+                    }
+                    .gbs {
+                        padding-bottom: 3rem;
+                    }
+                }
+        }
+    }
+}

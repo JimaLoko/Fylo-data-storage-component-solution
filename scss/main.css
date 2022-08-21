@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+    background-color: #94ff97;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
+    background-color: #19FF19;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+    background-color: #94ff97;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
+    background-color: #19FF19;
+  }
+}
+@-webkit-keyframes charge {
+  0% {
+    width: 50%;
+  }
+  25% {
+    width: 63.7%;
+  }
+  50% {
+    width: 72%;
+  }
+  75% {
+    width: 81.5%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes charge {
+  0% {
+    width: 50%;
+  }
+  25% {
+    width: 63.7%;
+  }
+  50% {
+    width: 72%;
+  }
+  75% {
+    width: 81.5%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes space-left {
+  0% {
+    content: "500";
+  }
+  25% {
+    content: "363";
+  }
+  50% {
+    content: "280";
+  }
+  75% {
+    content: "185";
+  }
+  100% {
+    content: "0";
+  }
+}
+@keyframes space-left {
+  0% {
+    content: "500";
+  }
+  25% {
+    content: "363";
+  }
+  50% {
+    content: "280";
+  }
+  75% {
+    content: "185";
+  }
+  100% {
+    content: "0";
+  }
+}
+@-webkit-keyframes space-used {
+  0% {
+    content: "500";
+  }
+  25% {
+    content: "637";
+  }
+  50% {
+    content: "720";
+  }
+  75% {
+    content: "815";
+  }
+  100% {
+    content: "1000";
+  }
+}
+@keyframes space-used {
+  0% {
+    content: "500";
+  }
+  25% {
+    content: "637";
+  }
+  50% {
+    content: "720";
+  }
+  75% {
+    content: "815";
+  }
+  100% {
+    content: "1000";
+  }
+}
+@-webkit-keyframes enter-left {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes enter-left {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes enter-top {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes enter-top {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes enter-bottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes enter-bottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+main {
+  font-size: 1.4rem;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(229deg, 57%, 11%) url(../images/bg-desktop.png) no-repeat bottom center;
+  background-size: contain;
+  flex-direction: column;
+}
+main .container {
+  -webkit-animation: enter-left 1.5s;
+          animation: enter-left 1.5s;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 7rem;
+}
+main .container .file-explorer {
+  -webkit-animation: enter-top 2s;
+          animation: enter-top 2s;
+  box-shadow: rgba(255, 77, 151, 0.3) 0px 19px 38px, rgba(255, 77, 151, 0.22) 0px 15px 12px;
+  margin-right: 3.5rem;
+  width: 100%;
+  max-width: 40rem;
+  background-color: hsl(228deg, 56%, 26%);
+  border-radius: 10px 130px 10px 10px;
+  padding: 5rem;
+}
+main .container .file-explorer .logo {
+  margin-bottom: 4rem;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(69%) saturate(5747%) hue-rotate(305deg) brightness(97%) contrast(110%);
+}
+main .container .file-explorer .icons ul {
+  list-style: none;
+  display: flex;
+}
+main .container .file-explorer .icons ul li {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: hsl(229deg, 57%, 11%);
+  transition: all 0.5s;
+}
+main .container .file-explorer .icons ul li:not(:first-child) {
+  margin-left: 2rem;
+}
+main .container .file-explorer .icons ul li:hover {
+  transform: scale(1.1);
+}
+main .container .file-explorer .icons ul li a {
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+main .container .file-explorer .icons ul li a:hover {
+  transform: rotate(30deg);
+  background-color: aqua;
+  background: transparent;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(69%) saturate(5747%) hue-rotate(305deg) brightness(97%) contrast(110%);
+}
+main .container .storage-bar {
+  -webkit-animation: enter-bottom 2s;
+          animation: enter-bottom 2s;
+  box-shadow: rgba(255, 77, 151, 0.3) 0px 19px 38px, rgba(255, 77, 151, 0.22) 0px 15px 12px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 60rem;
+  height: 17rem;
+  background-color: hsl(228deg, 56%, 26%);
+  padding: 4rem;
+  position: relative;
+}
+main .container .storage-bar .storage-space {
+  position: absolute;
+  box-shadow: rgba(255, 77, 151, 0.3) 0px 3px 6px, rgba(255, 77, 151, 0.22) 0px 3px 6px;
+  box-shadow: rgba(255, 77, 151, 0.35) 0px 5px 15px;
+  top: -5.3rem;
+  right: 5.3rem;
+  background-color: hsl(243deg, 100%, 93%);
+  border-radius: 10px 10px 0 10px;
+  width: 100%;
+  max-width: 18rem;
+  line-height: 8rem;
+  transition: all 1s;
+}
+main .container .storage-bar .storage-space::after {
+  content: "";
+  right: 0;
+  bottom: -1.9rem;
+  position: absolute;
+  border-left: transparent 10px solid;
+  border-top: hsl(243deg, 100%, 93%) 10px solid;
+  border-right: hsl(243deg, 100%, 93%) 10px solid;
+  border-bottom: transparent 10px solid;
+}
+main .container .storage-bar .storage-space h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+main .container .storage-bar .storage-space h1::before {
+  content: "500";
+  background-image: linear-gradient(315deg, rgb(255, 77, 151) 0%, rgb(255, 163, 153) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 300% auto;
+  -webkit-animation: space-left 10s infinite ease-in-out;
+          animation: space-left 10s infinite ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+main .container .storage-bar .storage-space h1 span {
+  color: hsl(229deg, 7%, 55%);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+}
+main .container .storage-bar h2 {
+  color: hsl(229deg, 7%, 55%);
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+main .container .storage-bar h2 span {
+  color: hsl(243deg, 100%, 93%);
+  font-weight: 700;
+}
+main .container .storage-bar h2 span::before {
+  content: "500";
+  background-image: linear-gradient(315deg, rgb(255, 77, 151) 0%, rgb(255, 163, 153) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 300% auto;
+  -webkit-animation: space-used 10s infinite ease-in-out;
+          animation: space-used 10s infinite ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+main .container .storage-bar .bar {
+  width: 100%;
+  height: 2rem;
+  background-color: hsl(229deg, 57%, 11%);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+main .container .storage-bar .bar .charge-bar {
+  position: relative;
+  width: 50%;
+  height: 1.8rem;
+  background: linear-gradient(315deg, rgb(255, 77, 151) 0%, rgb(255, 163, 153) 100%);
+  border-radius: 10px;
+  -webkit-animation: charge 10s infinite ease-in-out;
+          animation: charge 10s infinite ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+main .container .storage-bar .bar .charge-bar::after {
+  content: "";
+  top: 0.1rem;
+  right: 0.2rem;
+  border-radius: 50%;
+  z-index: 3;
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  -webkit-animation: rotate 0.15s infinite ease-in-out;
+          animation: rotate 0.15s infinite ease-in-out;
+  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+main .container .storage-bar .gbs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(243deg, 100%, 93%);
+  font-weight: 700;
+}
+@media (max-width: 1070px) {
+  main {
+    background: hsl(229deg, 57%, 11%) url(../images/bg-mobile.png) no-repeat top center;
+    background-size: cover;
+    padding: 2rem;
+  }
+  main .container {
+    margin: 0;
+    margin-bottom: 4rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .container .file-explorer {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+  main .container .storage-bar {
+    height: auto;
+  }
+  main .container .storage-bar .storage-space {
+    top: 17rem;
+    right: 8rem;
+    border-radius: 10px;
+  }
+  main .container .storage-bar .storage-space::after {
+    content: "";
+    border: none;
+  }
+  main .container .storage-bar .gbs {
+    padding-bottom: 3rem;
+  }
+}/*# sourceMappingURL=main.css.map */
