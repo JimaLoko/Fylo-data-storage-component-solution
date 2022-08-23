@@ -139,7 +139,7 @@ $Very-Dark-Blue: hsl(229, 57%, 11%);
     justify-content: center;
     align-items: center;
     background: $Very-Dark-Blue url(../images/bg-desktop.png) no-repeat bottom center;
-    background-size: contain;
+    background-size: 100% 50vmin;
     flex-direction: column;
         main {
             animation: enter-left 1.5s;
@@ -319,7 +319,7 @@ $Very-Dark-Blue: hsl(229, 57%, 11%);
     
     @media (max-width:1070px) {
         background: $Very-Dark-Blue url(../images/bg-mobile.png) no-repeat top center;
-        background-size: cover;
+        background-size: 100% 100vh;
         padding: 2rem;
         main {
             margin: 0;

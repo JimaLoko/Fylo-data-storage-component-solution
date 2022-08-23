@@ -211,7 +211,7 @@ html {
   justify-content: center;
   align-items: center;
   background: hsl(229deg, 57%, 11%) url(../images/bg-desktop.png) no-repeat bottom center;
-  background-size: contain;
+  background-size: 100% 50vmin;
   flex-direction: column;
 }
 .container main {
@@ -400,7 +400,7 @@ html {
 @media (max-width: 1070px) {
   .container {
     background: hsl(229deg, 57%, 11%) url(../images/bg-mobile.png) no-repeat top center;
-    background-size: cover;
+    background-size: 100% 100vh;
     padding: 2rem;
   }
   .container main {
